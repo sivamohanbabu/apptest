@@ -30,17 +30,19 @@ https://templatemo.com/tm-569-edu-meeting
 </head>
 
 <body>
-  <!-- Modal -->
   <div class="modal fade" id="autoPopupModal" tabindex="-1" aria-labelledby="autoPopupModalLabel" aria-hidden="true"
-    style="margin-top:40px ;">
+    data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="autoPopupModalLabel">Discounts on Courses</h5>
+          <h6 class="modal-title" id="autoPopupModalLabel">Welcome to Siva IT Trainings(play the video)</h6>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="./assets/images/course-01.jpg">
+          <video id="autoPopupVideo" controls autoplay width="470px" height="300px">
+            <source src="./assets/images/videoplayback.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -49,6 +51,7 @@ https://templatemo.com/tm-569-edu-meeting
     </div>
   </div>
 
+
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Bootstrap Bundle with Popper -->
@@ -56,15 +59,22 @@ https://templatemo.com/tm-569-edu-meeting
 
   <script>
     $(document).ready(function () {
-      // Auto-popup modal after 3 seconds
-      setTimeout(function () {
-        $('#autoPopupModal').modal('show');
+      // Show the modal
+      $('#autoPopupModal').modal('show');
 
-        // Close the modal after 3 seconds
-        setTimeout(function () {
-          $('#autoPopupModal').modal('hide');
-        }, 3000);
-      }, 1000);
+      // Create video element
+      var video = document.createElement('video');
+      video.controls = true;
+      video.autoplay = true;
+      video.innerHTML = '<source src="path_to_your_video.mp4" type="video/mp4">Your browser does not support the video tag.';
+
+      // Append video to modal body
+      document.getElementById('videoContainer').appendChild(video);
+
+      // Close the modal after 3 seconds
+      setTimeout(function () {
+        $('#autoPopupModal').modal('hide');
+      }, 3000);
     });
   </script>
   <!-- Sub Header -->
