@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -30,7 +30,43 @@ https://templatemo.com/tm-569-edu-meeting
 </head>
 
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="autoPopupModal" tabindex="-1" aria-labelledby="autoPopupModalLabel" aria-hidden="true"
+    style="margin-top:40px ;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="autoPopupModalLabel">Discounts on Courses</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="./assets/images/course-01.jpg">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Auto-popup modal after 3 seconds
+      setTimeout(function () {
+        $('#autoPopupModal').modal('show');
+
+        // Close the modal after 3 seconds
+        setTimeout(function () {
+          $('#autoPopupModal').modal('hide');
+        }, 3000);
+      }, 1000);
+    });
+  </script>
   <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
@@ -860,6 +896,6 @@ https://templatemo.com/tm-569-edu-meeting
   </script>
 </body>
 
-</body>
+
 
 </html>
